@@ -1,0 +1,6 @@
+/.idea/
+/node_modules/
+/.svelte-kit/
+/package/
+/package-lock.json
+/src/lib/tsui-app-tab-bar.css

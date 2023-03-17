@@ -1,0 +1,182 @@
+.tsui-app-tab-container-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  box-sizing: border-box;
+  padding: 8px;
+
+  .tsui-app-tab-container {
+
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    box-sizing: border-box;
+    position: relative;
+
+    .tsui-app-tab-bar {
+      padding: 0 4px;
+      display: grid;
+      font-size: 15px;
+      font-weight: 600;
+
+      .tsui-app-tab {
+        padding: 6px 4px 0 4px;
+        position: relative;
+        line-height: 32px;
+
+        &>div {
+          background-color: #f0f0f0;
+          padding: 0 8px;
+          line-height: 32px;
+          box-sizing: border-box;
+          text-align: center;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          border-top-left-radius: 8px;
+          border-top-right-radius: 8px;
+          position: relative;
+        }
+
+        &.active {
+          padding: 4px 4px 0 4px;
+          border-bottom: none;
+
+          >div {
+            border-top: 1px solid #9d9d9d;
+            border-right: 1px solid #9d9d9d;
+            border-left: 1px solid #9d9d9d;
+            background-color: #ffffff;
+            line-height: 34px;
+          }
+        }
+
+        img {
+          width: 18px;
+          height: 18px;
+          padding: 3px;
+          box-sizing: border-box;
+          border-radius: 50%;
+          position: absolute;
+          right: 3px;
+          top: 4px;
+          display: none;
+
+          svg {
+            path {
+              color: #ff3e00;
+            }
+          }
+
+          &:hover {
+            background-color: #9d9d9d;
+          }
+        }
+
+        &:hover {
+          img {
+            display: block;
+          }
+        }
+      }
+
+      .tsui-inactive-tabs {
+
+        .btn-more {
+          width: 40px;
+          height: 40px;
+          text-align: center;
+          line-height: 40px;
+          position: relative;
+
+          img {
+            width: 32px;
+            height: 32px;
+            padding: 4px;
+            box-sizing: border-box;
+            position: relative;
+            top: 4px;
+
+            &:hover {
+              border-radius: 50%;
+              border: 1px solid #e1e1e1;
+            }
+
+            &:active {
+              top: 5px;
+              background-color: #f0f0f0;
+            }
+
+          }
+        }
+      }
+
+      .tsui-popover-tabs {
+        width: 100%;
+        height: 100%;
+        font-size: 1.1em;
+        padding: 4px 0;
+        box-sizing: border-box;
+
+        >div {
+          width: 100%;
+          padding: 4px 40px 4px 8px;
+          box-sizing: border-box;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          position: relative;
+
+          img {
+            position: absolute;
+            top: 4px;
+            right: 8px;
+            width: 24px;
+            height: 24px;
+            padding: 4px;
+            border-radius: 50%;
+            box-sizing: border-box;
+            display: none;
+
+            &:hover {
+              background-color: #e0e0e0;
+            }
+          }
+
+          &:hover {
+            background-color: #f0f0f0;
+            img {
+              display: block;
+            }
+          }
+
+        }
+      }
+    }
+
+    .tsui-tab-panel-container {
+      flex-shrink: 1;
+      flex-grow: 1;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      position: relative;
+      border-left: 1px solid #9d9d9d;
+      border-right: 1px solid #9d9d9d;
+      border-bottom: 1px solid #9d9d9d;
+      border-top: 1px solid #9d9d9d;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .tsui-tab-panel {
+      display: none;
+      width: 100%;
+      height: 100%;
+      box-sizing: border-box;
+      position: relative;
+
+      &.active {
+        display: block;
+      }
+    }
+  }
+}

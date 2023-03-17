@@ -1,0 +1,36 @@
+{
+  "name": "@hanmotec/tsui-app-tabs",
+  "version": "0.1.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "types": "index.d.ts",
+  "scripts": {
+    "dev": "vite dev",
+    "build:css": "node-sass src/lib/tsui-app-tab-bar.scss -o src/lib --output-style compressed",
+    "build": "npm run build:css && svelte-kit sync && svelte-package",
+    "prepublishOnly": "echo 'Did you mean to publish `./package/`, instead of `./`?' && exit 1",
+    "check": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json",
+    "check:watch": "svelte-kit sync && svelte-check --tsconfig ./tsconfig.json --watch",
+    "publish": "cd ./package && npm publish --access public"
+  },
+  "repository": {
+    "url": "https://github.com/hanmo-chn/svelte-app-tabs"
+  },
+  "devDependencies": {
+    "@hanmotec/tsui-common": "^0.1.0",
+    "@sveltejs/adapter-auto": "next",
+    "@sveltejs/kit": "next",
+    "@sveltejs/package": "next",
+    "node-sass": "^8.0.0",
+    "sass": "^1.57.1",
+    "svelte": "^3.44.0",
+    "svelte-check": "^2.7.1",
+    "svelte-preprocess": "^4.10.6",
+    "tslib": "^2.3.1",
+    "typescript": "^4.7.4",
+    "vite": "4.0.4"
+  },
+  "author": "Henry Feng",
+  "license": "MIT"
+}
