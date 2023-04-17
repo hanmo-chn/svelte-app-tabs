@@ -8,11 +8,11 @@
     export let maxTabs: number = 6;
     export let capacity: number = 10;
 
-    export const open = (id: string, label: string, component: SvelteComponent):void => {
+    export const open = (id: string, label: string, component: SvelteComponent, props?: any):void => {
         let tab = tabs.find(item=>item.id===id);
         if (tab == null) {
             console.debug('新增标签页', id, label);
-            tab = {id, label, component, latestActive: (new Date()).getTime()};
+            tab = {id, label, component, props, latestActive: (new Date()).getTime()};
             if (tabs.length >= maxTabs) {
                 let tabIdx = getMaxIdleTabIndex();
                 let tabList = tabs.splice(tabIdx, 1);
@@ -157,7 +157,7 @@
         <div class="tsui-tab-panel-container">
             {#each tabs as tab}
                 <div class="tsui-tab-panel" class:active={tab===activeTab}>
-                    <svelte:component this={tab.component}/>
+                    <svelte:component this={tab.component} {...tab.props}/>
                 </div>
             {/each}
         </div>

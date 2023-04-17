@@ -14,6 +14,10 @@ export default interface AppTab {
      */
     component: SvelteComponent;
     /**
+     * 相关的数据
+     */
+    props: any;
+    /**
      * 最后一次使用的时间
      */
     latestActive: number;
